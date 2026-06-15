@@ -2284,6 +2284,209 @@ footer {
    ============================================= */
 
 @media (max-width: 1024px) {
+  /* Services two column */
+  .services-two-col {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+  }
+
+  /* Tech grid */
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Process steps */
+  .process-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Team preview */
+  .team-preview-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Services two column */
+  .services-two-col {
+    gap: 1.5rem;
+  }
+
+  .service-track {
+    padding: 1.5rem;
+  }
+
+  /* Tech grid */
+  .tech-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .tech-category {
+    padding: 1.5rem;
+  }
+
+  .tech-stack-section {
+    padding: 3rem 4%;
+  }
+
+  /* Process steps */
+  .process-steps {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .process-step {
+    padding: 1.5rem;
+  }
+
+  .how-it-works {
+    padding: 3rem 4%;
+  }
+
+  /* Case study */
+  .case-study-section {
+    padding: 3rem 4%;
+  }
+
+  .case-study-header {
+    padding: 1.5rem;
+  }
+
+  .case-study-header h3 {
+    font-size: 1.4rem;
+  }
+
+  .case-study-content {
+    padding: 1.5rem;
+  }
+
+  .case-study-testimonial {
+    padding: 1.5rem;
+  }
+
+  .case-study-testimonial blockquote {
+    font-size: 1.1rem;
+  }
+
+  /* FAQ section */
+  .faq-section {
+    padding: 3rem 4%;
+  }
+
+  .faq-question {
+    padding: 1.25rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .faq-answer p {
+    padding: 0 1.5rem 1.25rem;
+  }
+
+  /* Guarantee section */
+  .guarantee-section {
+    padding: 2rem 4%;
+  }
+
+  .guarantee-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .guarantee-icon {
+    margin: 0 auto;
+  }
+
+  /* Team section full page */
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-member-card {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* Page header */
+  .page-header {
+    padding: 6rem 4% 3rem;
+  }
+
+  .page-header h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Hero adjustments */
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  /* Service track */
+  .service-track {
+    padding: 1.25rem;
+  }
+
+  .track-header h3 {
+    font-size: 1.25rem;
+  }
+
+  .track-features li {
+    font-size: 0.9rem;
+  }
+
+  /* Process steps */
+  .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .process-step h3 {
+    font-size: 1.1rem;
+  }
+
+  /* Case study */
+  .case-study-header h3 {
+    font-size: 1.2rem;
+  }
+
+  /* Pricing cards */
+  .pricing-card {
+    padding: 1.5rem;
+  }
+
+  .price-amount {
+    font-size: 2rem;
+  }
+
+  /* Enterprise section */
+  .enterprise-card {
+    padding: 1.5rem;
+  }
+
+  /* Section headers */
+  .section-header h2 {
+    font-size: 1.75rem;
+  }
+
+  /* Team preview button */
+  .team-preview-cta .btn-primary {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 1024px) {
   .service-grid {
     grid-template-columns: 1fr;
     max-width: 600px;
