@@ -1,166 +1,283 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Open Savanna - CTO as a Service | Technology Leadership for Kenyan
-      Businesses
-    </title>
+    <title>Open Savanna | Technology Consulting & Advisory for East Africa</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Open Savanna provides technology consulting, project delivery, and advisory services for businesses, startups, and organizations across East Africa." />
+    <meta name="keywords" content="Technology Consulting, IT Consulting, ICT, Kenya, Uganda, Tanzania, Rwanda, East Africa, Tech Advisory, Digital Transformation, Software Development" />
+    <meta name="author" content="Open Savanna" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.opensavanna.com/" />
+    <meta property="og:title" content="Open Savanna | Technology Consulting for East Africa" />
+    <meta property="og:description" content="Technology consulting and project delivery for businesses across East Africa." />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500;600&family=Crimson+Pro:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Styles -->
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <nav>
-      <div class="logo">Open Savanna</div>
-      <ul class="nav-links">
+    <!-- Navigation -->
+    <nav id="navbar">
+      <a href="index.html" class="logo">
+        <img src="Images/logo.svg" alt="Open Savanna" class="logo-icon" />
+        <span class="logo-text">Open Savanna</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
         <li><a href="#services">Services</a></li>
-        <li><a href="#about">Our Story</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="team.html">Team</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <a href="#contact" class="cta-button">Get In Touch</a>
+      <a href="https://cal.com/open-savanna/discovery" target="_blank" class="cta-button nav-cta">Book a Call</a>
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </nav>
 
-    <section class="hero">
-      <h1>Innovate Beyond Limits</h1>
-      <div class="hero-image">
-        <img
-          src="Images/Home page savanna silhoutte.jpg"
-          alt="Savanna landscape at sunset"
-        />
-      </div>
-    </section>
-
-    <section class="services" id="services">
-      <h2>Solutions Designed for Real-World Impact</h2>
-      <div class="service-grid">
-        <div class="service-card">
-          <div class="service-image">
-            <img src="Images/service-1.jpg" alt="Strategic Advisory" />
-          </div>
-          <div class="service-content">
-            <h3>Strategic Advisory</h3>
-            <p class="service-price">From KES 150,000/month</p>
-            <p>
-              Get expert technology leadership without the full-time commitment.
-              We help Kenyan businesses navigate digital transformation, build
-              technical roadmaps, and make strategic decisions that drive
-              growth.
-            </p>
-          </div>
-        </div>
-
-        <div class="service-card">
-          <div class="service-image">
-            <img src="Images/service-2.jpg" alt="Fractional CTO" />
-          </div>
-          <div class="service-content">
-            <h3>Fractional CTO</h3>
-            <p class="service-price">From KES 300,000/month</p>
-            <p>
-              Hands-on technical leadership for your team. We build your
-              technology infrastructure, lead development teams, implement best
-              practices, and ensure your tech stack scales with your ambitions.
-            </p>
-          </div>
-        </div>
-
-        <div class="service-card">
-          <div class="service-image">
-            <img src="Images/service-3.jpg" alt="Team Building" />
-          </div>
-          <div class="service-content">
-            <h3>Team Building</h3>
-            <p class="service-price">Project-based pricing</p>
-            <p>
-              Recruit, train, and structure high-performing engineering teams.
-              We understand the Kenyan tech talent landscape and help you build
-              teams that deliver exceptional results.
-            </p>
-          </div>
-        </div>
-
-        <div class="service-card">
-          <div class="service-image">
-            <img src="Images/service-4.jpg" alt="Technical Due Diligence" />
-          </div>
-          <div class="service-content">
-            <h3>Technical Due Diligence</h3>
-            <p class="service-price">From KES 250,000/project</p>
-            <p>
-              Comprehensive technical audits for investors and acquirers. We
-              assess code quality, infrastructure, security, scalability, and
-              technical team capabilities to inform your investment decisions.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="about" id="about">
-      <h2>Built for the Kenyan Market</h2>
-      <p class="about-intro">
-        Open Savanna brings world-class technology leadership to ambitious
-        Kenyan businesses. We understand the unique challenges of building tech
-        in East Africa — from navigating infrastructure constraints to accessing
-        technical talent and scaling on limited budgets.
-      </p>
-
-      <div class="about-features">
-        <div class="feature">
-          <h3>Local Expertise</h3>
-          <p>
-            Deep understanding of Kenya's tech ecosystem, talent pool, and
-            business environment
-          </p>
-        </div>
-        <div class="feature">
-          <h3>Global Standards</h3>
-          <p>
-            International best practices adapted for the realities of operating
-            in emerging markets
-          </p>
-        </div>
-        <div class="feature">
-          <h3>Proven Results</h3>
-          <p>
-            Track record of helping businesses scale from seed stage to market
-            leaders
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta-section" id="contact">
-      <div class="cta-content">
-        <h2>Ready to Transform Your Technology?</h2>
-        <p>
-          Let's discuss how we can accelerate your growth and build something
-          remarkable together.
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="title-line">Technology Partners</span>
+          <span class="title-line">For Your Growth</span>
+        </h1>
+        <p class="hero-subtitle">
+          We help businesses across East Africa build, scale, and modernize their technology
+          — from strategic consulting to hands-on project delivery.
         </p>
-        <div class="cta-buttons">
-          <a href="mailto:official@opensavanna.com" class="cta-large"
-            >Email Us</a
-          >
-          <a
-            href="https://wa.me/254704912322?text=Hi%20Open%20Savanna%2C%20I'm%20interested%20in%20your%20CTO%20services"
-            class="cta-large cta-whatsapp"
-            >WhatsApp Us</a
-          >
+        <div class="hero-cta">
+          <a href="https://cal.com/open-savanna/discovery" target="_blank" class="btn btn-primary">Book Free Consultation</a>
+          <a href="#services" class="btn btn-secondary">See How We Help</a>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <span>Scroll to explore</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+      <div class="section-header">
+        <p class="section-tagline">What We Do</p>
+        <h2>Two Ways We Can Help</h2>
+      </div>
+
+      <div class="services-two-col">
+        <!-- Consulting Track -->
+        <div class="service-track">
+          <div class="track-header">
+            <h3>Advisory & Consulting</h3>
+            <p>Ongoing technical guidance for your team</p>
+          </div>
+          <ul class="track-features">
+            <li>Technical strategy & roadmap development</li>
+            <li>Architecture reviews & recommendations</li>
+            <li>Technology stack decisions</li>
+            <li>Team mentorship & training</li>
+            <li>Hiring & team structure guidance</li>
+            <li>Vendor evaluation & selection</li>
+          </ul>
+          <p class="track-ideal"><strong>Ideal for:</strong> Startups, growing businesses, and organizations that need ongoing technical leadership without hiring full-time.</p>
+          <a href="pricing.html" class="track-cta">View Consulting Packages →</a>
+        </div>
+
+        <!-- Project Track -->
+        <div class="service-track">
+          <div class="track-header">
+            <h3>Project Delivery & Bids</h3>
+            <p>End-to-end technical project execution</p>
+          </div>
+          <ul class="track-features">
+            <li>Software development projects</li>
+            <li>IT/ICT tender & proposal responses</li>
+            <li>System implementation & integration</li>
+            <li>Technical documentation & reports</li>
+            <li>Digital transformation initiatives</li>
+            <li>Technical due diligence for investors</li>
+          </ul>
+          <p class="track-ideal"><strong>Ideal for:</strong> Organizations with specific projects, government/NGO tenders, and companies needing technical delivery partners.</p>
+          <a href="#contact" class="track-cta">Discuss Your Project →</a>
         </div>
       </div>
     </section>
 
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+      <div class="section-header">
+        <p class="section-tagline">How It Works</p>
+        <h2>Simple, Transparent Process</h2>
+      </div>
+
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <h3>Discovery Call</h3>
+          <p>Free 30-minute video call to understand your needs, challenges, and goals. No pressure, no obligations.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <h3>Proposal & Agreement</h3>
+          <p>We send a clear proposal outlining scope, deliverables, timeline, and pricing. You review and we agree on terms.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <h3>Kick-off & Execution</h3>
+          <p>We begin work with a structured onboarding. Regular check-ins keep you informed and involved throughout.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <h3>Delivery & Support</h3>
+          <p>You receive tangible deliverables — documents, recommendations, code, or whatever was agreed. We ensure you're satisfied.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section class="guarantee-section">
+      <div class="guarantee-content">
+        <div class="guarantee-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="M9 12l2 2 4-4"/>
+          </svg>
+        </div>
+        <div class="guarantee-text">
+          <h3>Our Satisfaction Guarantee</h3>
+          <p>If you're not satisfied with our first month of consulting services, we'll refund your payment in full — no questions asked. For project work, we offer milestone-based payments so you only pay for completed, approved work.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Preview Section -->
+    <section class="team-preview">
+      <div class="section-header">
+        <p class="section-tagline">Who We Are</p>
+        <h2>Meet Our Team</h2>
+        <p class="section-subtitle">A small team of experienced professionals committed to your success.</p>
+      </div>
+
+      <div class="team-preview-grid">
+        <div class="team-card">
+          <div class="team-photo-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z"/>
+            </svg>
+          </div>
+          <div class="team-info">
+            <h4>George Kimaru</h4>
+            <p class="team-role">Software Engineer</p>
+            <p class="team-bio">Software Engineer at Microsoft with experience building products used by millions. Specializes in full-stack development and cloud architecture.</p>
+            <a href="https://www.linkedin.com/in/kimarugeorge/" target="_blank" class="team-linkedin">LinkedIn →</a>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-photo-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z"/>
+            </svg>
+          </div>
+          <div class="team-info">
+            <h4>Norah Nyaboke</h4>
+            <p class="team-role">Senior Business Development Manager</p>
+            <p class="team-bio">Experienced in business development, client relations, and project coordination across East African markets.</p>
+            <a href="https://www.linkedin.com/in/norahnyaboke/" target="_blank" class="team-linkedin">LinkedIn →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-preview-cta">
+        <a href="team.html" class="btn btn-secondary">View Full Team Page →</a>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+      <div class="cta-background"></div>
+      <div class="cta-content">
+        <h2>Let's Talk About Your Needs</h2>
+        <p>Book a free 30-minute discovery call. We'll listen to your challenges and discuss how we might help — with zero pressure.</p>
+        <div class="cta-buttons">
+          <a href="https://cal.com/open-savanna/discovery" target="_blank" class="btn btn-light">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+            Book a Call
+          </a>
+          <a href="https://wa.me/254735912322?text=Hi%20Open%20Savanna%2C%20I'd%20like%20to%20discuss%20a%20potential%20project" class="btn btn-whatsapp">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            WhatsApp
+          </a>
+        </div>
+        <div class="cta-contact-info">
+          <p><strong>Email:</strong> official@opensavanna.com</p>
+          <p><strong>Phone:</strong> +254 735 912 322</p>
+          <p><strong>Based in:</strong> Nairobi, Kenya | Serving East Africa remotely</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-      <p>
-        &copy; 2025 Open Savanna. Technology leadership for ambitious
-        businesses. | official@opensavanna.com
-      </p>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="footer-logo-wrapper">
+            <img src="Images/logo.svg" alt="Open Savanna" class="footer-logo-icon" />
+            <span class="footer-logo-text">Open Savanna</span>
+          </div>
+          <p>Technology consulting and project delivery for East Africa.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Services</h4>
+            <a href="#services">Advisory & Consulting</a>
+            <a href="#services">Project Delivery</a>
+            <a href="#services">IT/ICT Bids</a>
+          </div>
+          <div class="footer-column">
+            <h4>Company</h4>
+            <a href="pricing.html">Pricing</a>
+            <a href="team.html">Our Team</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <div class="footer-column">
+            <h4>Connect</h4>
+            <a href="mailto:official@opensavanna.com">official@opensavanna.com</a>
+            <a href="https://wa.me/254735912322">+254 735 912 322</a>
+            <a href="https://linkedin.com/company/opensavanna" target="_blank">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Open Savanna. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+      </div>
     </footer>
+
+    <!-- Scripts -->
+    <script src="main.js"></script>
   </body>
 </html>
