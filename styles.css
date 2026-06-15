@@ -2310,6 +2310,11 @@ footer {
 }
 
 @media (max-width: 768px) {
+  /* Hide scroll indicator on mobile */
+  .scroll-indicator {
+    display: none;
+  }
+
   /* Services two column */
   .services-two-col {
     gap: 1.5rem;
