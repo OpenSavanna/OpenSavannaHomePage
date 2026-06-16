@@ -524,6 +524,121 @@ class TypedText {
 }
 
 // =============================================
+// GOOGLE ANALYTICS EVENT TRACKING
+// =============================================
+
+class AnalyticsTracker {
+  constructor() {
+    this.init();
+  }
+
+  init() {
+    this.trackPricingClicks();
+    this.trackContactClicks();
+    this.trackBookingClicks();
+  }
+
+  // Track pricing tier button clicks
+  trackPricingClicks() {
+    const pricingButtons = document.querySelectorAll('.pricing-cta');
+    const tiers = ['Learn', 'Consult', 'Grow', 'Scale'];
+
+    pricingButtons.forEach((btn, index) => {
+      btn.addEventListener('click', () => {
+        const tierName = tiers[index] || 'Unknown';
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'pricing_click', {
+            'event_category': 'Pricing',
+            'event_label': tierName,
+            'value': index + 1
+          });
+        }
+        console.log(`Analytics: Pricing click - ${tierName}`);
+      });
+    });
+
+    // Enterprise section
+    const enterpriseBtn = document.querySelector('.enterprise-cta .btn');
+    if (enterpriseBtn) {
+      enterpriseBtn.addEventListener('click', () => {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'pricing_click', {
+            'event_category': 'Pricing',
+            'event_label': 'Enterprise',
+            'value': 5
+          });
+        }
+      });
+    }
+  }
+
+  // Track contact button clicks
+  trackContactClicks() {
+    // WhatsApp clicks
+    document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+      link.addEventListener('click', () => {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'contact_click', {
+            'event_category': 'Contact',
+            'event_label': 'WhatsApp'
+          });
+        }
+      });
+    });
+
+    // Email clicks
+    document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+      link.addEventListener('click', () => {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'contact_click', {
+            'event_category': 'Contact',
+            'event_label': 'Email'
+          });
+        }
+      });
+    });
+
+    // Phone clicks
+    document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+      link.addEventListener('click', () => {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'contact_click', {
+            'event_category': 'Contact',
+            'event_label': 'Phone'
+          });
+        }
+      });
+    });
+
+    // LinkedIn clicks
+    document.querySelectorAll('a[href*="linkedin.com"]').forEach(link => {
+      link.addEventListener('click', () => {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'contact_click', {
+            'event_category': 'Contact',
+            'event_label': 'LinkedIn'
+          });
+        }
+      });
+    });
+  }
+
+  // Track booking button clicks
+  trackBookingClicks() {
+    document.querySelectorAll('a[href*="cal.com"]').forEach(link => {
+      link.addEventListener('click', () => {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'book_call_click', {
+            'event_category': 'Conversion',
+            'event_label': 'Book a Call'
+          });
+        }
+      });
+    });
+  }
+}
+
+// =============================================
 // INITIALIZE EVERYTHING
 // =============================================
 
@@ -536,6 +651,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initialize interactive effects
   const effects = new InteractiveEffects();
+
+  // Initialize analytics tracking
+  const analytics = new AnalyticsTracker();
 
   // Console branding
   console.log(
