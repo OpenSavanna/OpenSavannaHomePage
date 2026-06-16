@@ -1,6 +1,8 @@
 /* =============================================
    OPEN SAVANNA - Interactive JavaScript
-   Three.js Savanna Particles + UI Interactions
+   UI Interactions + Analytics
+   (Note: the SavannaParticles class below is currently inert — no #savanna-canvas
+    element or Three.js library is loaded — and can be deleted in a cleanup pass.)
    ============================================= */
 
 // =============================================
@@ -643,9 +645,6 @@ class AnalyticsTracker {
 // =============================================
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialize Three.js particles
-  const particles = new SavannaParticles();
-
   // Initialize UI interactions
   const ui = new OpenSavannaUI();
 
@@ -698,4 +697,113 @@ document.addEventListener('DOMContentLoaded', () => {
 if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.documentElement.style.setProperty('--transition-slow', '0.01s');
   document.documentElement.style.setProperty('--transition-base', '0.01s');
+}
+
+// =============================================
+// COOKIE CONSENT + GATED GOOGLE ANALYTICS (Kenya DPA 2019)
+// Analytics (gtag) is NOT loaded until the visitor clicks "Accept".
+// =============================================
+
+const GA_MEASUREMENT_ID = 'G-GE47V1SZLD';
+
+function loadGoogleAnalytics() {
+  if (window.__osGaLoaded) return;
+  window.__osGaLoaded = true;
+  const s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { window.dataLayer.push(arguments); };
+  window.gtag('js', new Date());
+  window.gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true });
+}
+
+class CookieConsent {
+  constructor() {
+    this.storageKey = 'os-cookie-consent';
+    this.injectStyles();
+    this.init();
+  }
+
+  init() {
+    let choice = null;
+    try { choice = localStorage.getItem(this.storageKey); } catch (e) {}
+    if (choice === 'accepted') { loadGoogleAnalytics(); return; }
+    if (choice === 'rejected') { return; }
+    this.renderBanner();
+  }
+
+  injectStyles() {
+    const style = document.createElement('style');
+    style.textContent = `
+      .cookie-banner {
+        position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 9999;
+        max-width: 640px; margin: 0 auto;
+        background: #2D2A26; color: #F5F2ED;
+        border: 1px solid rgba(201,162,39,0.4); border-radius: 12px;
+        box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+        padding: 1rem 1.25rem;
+        opacity: 0; transform: translateY(20px);
+        transition: opacity .3s ease, transform .3s ease;
+        font-family: 'Inter', system-ui, sans-serif;
+      }
+      .cookie-banner.show { opacity: 1; transform: translateY(0); }
+      .cookie-banner-content { display: flex; flex-direction: column; gap: .85rem; }
+      .cookie-banner p { margin: 0; font-size: .9rem; line-height: 1.5; }
+      .cookie-banner a { color: #C9A227; text-decoration: underline; }
+      .cookie-banner-actions { display: flex; gap: .6rem; justify-content: flex-end; }
+      .cookie-btn {
+        cursor: pointer; border-radius: 8px; padding: .55rem 1.1rem;
+        font-size: .85rem; font-weight: 600; border: 1px solid transparent;
+        font-family: inherit;
+      }
+      .cookie-accept { background: #C9A227; color: #2D2A26; }
+      .cookie-accept:hover { background: #d8b43a; }
+      .cookie-reject { background: transparent; color: #F5F2ED; border-color: rgba(245,242,237,0.35); }
+      .cookie-reject:hover { border-color: #F5F2ED; }
+      @media (min-width: 520px) {
+        .cookie-banner-content { flex-direction: row; align-items: center; }
+        .cookie-banner-actions { flex-shrink: 0; }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  renderBanner() {
+    const banner = document.createElement('div');
+    banner.className = 'cookie-banner';
+    banner.id = 'cookie-banner';
+    banner.setAttribute('role', 'dialog');
+    banner.setAttribute('aria-label', 'Cookie consent');
+    banner.innerHTML = `
+      <div class="cookie-banner-content">
+        <p>We use cookies and Google Analytics to understand how visitors use our site.
+           Analytics loads only if you accept. See our <a href="/privacy">Privacy Policy</a>.</p>
+        <div class="cookie-banner-actions">
+          <button class="cookie-btn cookie-reject" id="cookie-reject" type="button">Reject</button>
+          <button class="cookie-btn cookie-accept" id="cookie-accept" type="button">Accept</button>
+        </div>
+      </div>`;
+    document.body.appendChild(banner);
+    requestAnimationFrame(() => banner.classList.add('show'));
+    banner.querySelector('#cookie-accept').addEventListener('click', () => this.setChoice('accepted'));
+    banner.querySelector('#cookie-reject').addEventListener('click', () => this.setChoice('rejected'));
+  }
+
+  setChoice(value) {
+    try { localStorage.setItem(this.storageKey, value); } catch (e) {}
+    if (value === 'accepted') loadGoogleAnalytics();
+    const banner = document.getElementById('cookie-banner');
+    if (banner) {
+      banner.classList.remove('show');
+      setTimeout(() => banner.remove(), 300);
+    }
+  }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => new CookieConsent());
+} else {
+  new CookieConsent();
 }
