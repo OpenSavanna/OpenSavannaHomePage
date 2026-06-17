@@ -543,19 +543,17 @@ class AnalyticsTracker {
   // Track pricing tier button clicks
   trackPricingClicks() {
     const pricingButtons = document.querySelectorAll('.pricing-cta');
-    const tiers = ['Learn', 'Consult', 'Grow', 'Scale'];
 
     pricingButtons.forEach((btn, index) => {
       btn.addEventListener('click', () => {
-        const tierName = tiers[index] || 'Unknown';
+        const offerName = btn.dataset.offer || 'Unknown';
         if (typeof gtag !== 'undefined') {
           gtag('event', 'pricing_click', {
-            'event_category': 'Pricing',
-            'event_label': tierName,
+            'event_category': 'Services',
+            'event_label': offerName,
             'value': index + 1
           });
         }
-        console.log(`Analytics: Pricing click - ${tierName}`);
       });
     });
 
